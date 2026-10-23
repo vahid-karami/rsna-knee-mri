@@ -1,6 +1,6 @@
 # Knee MRI abnormality detection from weakly-labelled radiology reports
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/GITHUB_USER/rsna-knee-mri/blob/main/notebooks/rsna_knee_colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vahid-karami/rsna-knee-mri/blob/main/notebooks/rsna_knee_colab.ipynb)
 
 This is a deep-learning pipeline for the
 [RSNA Knee Abnormality Detection](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection) challenge (Kaggle, 2026).
