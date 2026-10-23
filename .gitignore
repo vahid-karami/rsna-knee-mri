@@ -1,0 +1,15 @@
+# Competition data must not be redistributed: keep it out of git
+data/
+work/
+cache/
+*.npz
+*.dcm
+*.pt
+*.jsonl
+submission.csv
+kaggle.json
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
