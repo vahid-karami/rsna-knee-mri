@@ -39,15 +39,19 @@ flowchart LR
 
 ## Results
 
-> Fill this in after running the notebook. Numbers come from `work/labels/label_agreement.csv` and `work/models/results.json`.
+> 🚧 Experiments are running. Results will be added here.
 
 | Stage | Macro ROC-AUC (expert-labelled studies) |
 |---|---|
-| Report labels: rules | _x.xxx_ |
-| Report labels: LLM | _x.xxx_ |
-| Image model (EfficientNet-B0, 1,500 studies) | _x.xxx_ |
+| Report labels: rules | in progress |
+| Report labels: LLM | in progress |
+| Image model (EfficientNet-B0, 1,500 studies) | in progress |
 
+<!-- After training: copy results.png from Google Drive (rsna-knee/work/) into docs/ and uncomment:
 ![results](docs/results.png)
+-->
+
+Numbers come from `work/labels/label_agreement.csv` and `work/models/results.json`.
 
 ## Run it
 
