@@ -47,7 +47,7 @@ flowchart LR
 | Report labels: LLM | in progress |
 | Image model (EfficientNet-B0, 1,500 studies) | in progress |
 
-<!-- After training: copy results.png from Google Drive (rsna-knee/work/) into docs/ and uncomment:
+<!-- After training: put results.png (downloaded by the Colab notebook) into docs/ and uncomment:
 ![results](docs/results.png)
 -->
 
