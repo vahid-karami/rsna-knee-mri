@@ -30,7 +30,7 @@ flowchart LR
 ```
 
 1. **Report labelling** ([`report_rules.py`](src/knee/report_rules.py), [`report_llm.py`](src/knee/report_llm.py)):
-   - A transparent rule-based extractor covers 7 languages. It handles negation ("no effusion", "kein Erguss", "geen vocht"), uncertainty ("possible tear") and laterality (medial vs lateral meniscus), and gives priority to the *Impression* section.
+   - A transparent rule-based extractor covers 9 languages (including Greek and Turkish). It handles negation ("no effusion", "kein Erguss", "geen vocht"), uncertainty ("possible tear") and laterality (medial vs lateral meniscus), and gives priority to the *Impression* section.
    - An open-weight LLM (Qwen2.5-3B/7B-Instruct, small enough for a free Colab T4) reads each report and returns a JSON object with the 12 findings.
    - Both are scored against the expert labels, and the better source (or their average) becomes the training target ([`build_labels.py`](src/knee/build_labels.py)).
 2. **Preprocessing** ([`preprocess.py`](src/knee/preprocess.py)): picks one fluid-sensitive series per plane (sagittal, coronal, axial) from the series metadata, orders slices by their 3D position, inverts MONOCHROME1 images, windows each series to its 1st-99th percentile, and resamples to 24 × 256 × 256.

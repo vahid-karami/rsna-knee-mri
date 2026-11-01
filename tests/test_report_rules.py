@@ -38,6 +38,29 @@ def test_other_languages():
     assert s("Épanchement articulaire abondant.", "Effusion") == 1.0
 
 
+def test_turkish():
+    text = ("Medial menisküs posterior hornunda horizontal yırtık izlenmektedir. "
+            "Ön çapraz bağ normaldir. Kemik iliği ödemi izlenmedi. Suprapateller bursada hafif sıvı artışı.")
+    assert s(text, "Medial Meniscus") == 1.0
+    assert s(text, "ACL") == 0.0
+    assert s(text, "Contusion") == 0.0
+    assert s(text, "Effusion") == 0.5
+
+
+def test_greek_with_micro_sign_and_decimals():
+    # Some Greek reports use the micro sign "µ" instead of the letter mu "μ".
+    text = ("Κύστη διάστασης 4.7εκ παρά την έσω κεφαλή του γαστροκνηµίου. "
+            "Ο πρόσθιος χιαστός σύνδεσµος χωρίς διακοπή της συνέχειας. ΣΥΜΠΕΡΑΣΜΑ: Ρήξη του έσω µηνίσκου.")
+    assert s(text, "Baker's") == 1.0
+    assert s(text, "ACL") == 0.0
+    assert s(text, "Medial Meniscus") == 1.0
+    assert s(text, "Lateral Meniscus") < 0.1
+
+
+def test_cannot_be_excluded_is_uncertain():
+    assert 0.0 < s("A small fracture cannot be excluded.", "Fracture") < 1.0
+
+
 def test_impression_wins():
     text = "Findings: possible bone bruise of the lateral femoral condyle. Impression: no contusion."
     assert s(text, "Contusion") == 0.0
